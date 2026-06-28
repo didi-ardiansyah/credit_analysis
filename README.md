@@ -80,11 +80,9 @@ Rekomendasi Bisnis
 
 | Metrik | Training | Testing | Threshold Industri |
 |---|---|---|---|
-| **AUC-ROC** | — | — | > 0.70 ✅ |
-| **Gini Coefficient** | — | — | > 0.40 ✅ |
-| **KS Statistic** | — | — | > 0.30 ✅ |
-
-> *Nilai aktual diisi setelah notebook dijalankan dengan dataset*
+| **AUC-ROC** | 0.8573 | 0.8561 | > 0.70 ✅ |
+| **Gini Coefficient** | 0.7147 | 0.7123 | > 0.40 ✅ |
+| **KS Statistic** | 0.5576 | 0.5583 | > 0.30 ✅ |
 
 ---
 
@@ -105,9 +103,9 @@ Contoh ilustrasi:
 
 | Segmen Keputusan | Rentang Skor | Aksi |
 |---|---|---|
-| **Approve** | > 620 | Setujui otomatis |
-| **Review** | 560 – 620 | Analisis manual |
-| **Reject** | < 560 | Tolak otomatis |
+| **Approve** | > 610 | Setujui otomatis |
+| **Review** | 586 – 610 | Analisis manual |
+| **Reject** | < 586 | Tolak otomatis |
 
 ### 3. Analisis Desil
 Tabel distribusi skor vs bad rate per desil populasi untuk validasi discriminatory power model.
@@ -117,7 +115,7 @@ Tabel distribusi skor vs bad rate per desil populasi untuk validasi discriminato
 ## 💡 Insight Kunci
 
 - **WoE/IV** lebih unggul dari one-hot encoding untuk credit scoring karena menangkap hubungan non-linear antara variabel dan target secara otomatis
-- **Logistic Regression** dipilih atas XGBoost karena *explainability* — wajib untuk kepatuhan regulasi OJK
+- **Logistic Regression** dipilih karena *explainability* — wajib untuk kepatuhan regulasi OJK
 - **KS Statistic** dan **Gini** lebih relevan dari *accuracy* untuk data kredit yang sangat tidak seimbang
 - Cut-off optimal harus mempertimbangkan **risk appetite** bisnis, bukan hanya optimasi matematis
 
@@ -126,9 +124,9 @@ Tabel distribusi skor vs bad rate per desil populasi untuk validasi discriminato
 ## 📂 Struktur File
 
 ```
-credit-risk-scorecard/
+credit_analysis/
 │
-├── credit_risk_scorecard.ipynb   ← Notebook utama (kode lengkap)
+├── credit_risk_analysis.ipynb   ← Notebook utama
 ├── cs-training.csv               ← Dataset (download dari Kaggle)
 └── README.md                     ← Dokumen ini
 ```
@@ -139,8 +137,8 @@ credit-risk-scorecard/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/[username]/credit-risk-scorecard.git
-cd credit-risk-scorecard
+git clone https://github.com/didi-ardiansyah/credit_analysis.git
+cd credit_risk_analysis
 
 # 2. Install dependencies
 pip install pandas numpy scikit-learn matplotlib seaborn scorecardpy
@@ -150,7 +148,7 @@ pip install pandas numpy scikit-learn matplotlib seaborn scorecardpy
 # → Simpan 'cs-training.csv' di folder ini
 
 # 4. Jalankan notebook
-jupyter notebook credit_risk_scorecard.ipynb
+notebook credit_risk_analysis.ipynb
 ```
 
 ---
