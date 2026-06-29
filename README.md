@@ -128,9 +128,9 @@ Tabel poin per variabel per bin — dapat langsung digunakan sebagai panduan kep
 
 **Perhitungan Credit Score**
 
-[
-\textbf{Credit Score} = 590 + \sum \text{Skor setiap variabel}
-]
+```text
+Credit Score = Base Score + Poin (Setiap Variabel)
+```
 
 Semakin tinggi skor yang diperoleh, semakin rendah risiko kredit yang diprediksi oleh model.
 
@@ -168,6 +168,7 @@ Tabel distribusi skor vs bad rate per desil populasi untuk validasi discriminato
 * Sebaliknya, nasabah pada **Desil 10 (D10)** hanya memiliki **Bad Rate sebesar 0,54%**, sehingga merupakan kelompok dengan risiko gagal bayar terendah.
 * Pola penurunan Bad Rate yang bersifat **monoton** dari D1 hingga D10 menunjukkan bahwa model memiliki **kemampuan diskriminasi (discriminatory power)** yang baik dalam membedakan nasabah berisiko tinggi dan berisiko rendah.
 * Hasil ini menunjukkan bahwa **semakin tinggi skor kredit yang diperoleh nasabah, semakin rendah probabilitas gagal bayar**, sehingga credit score yang dihasilkan layak digunakan sebagai dasar dalam proses penilaian risiko kredit.
+
 ---
 
 ## 💡 Insight Kunci
